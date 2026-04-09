@@ -37,8 +37,8 @@ function [n1_cmd, start_state, starter_torque, fuel_valve] = ...
     N1_IDLE_BAND    = 1.0;   % Within ±1% = stable at idle
 
     % Timing
-    CRANK_RAMP_RATE   = 6;   % PWM %/sec ramp rate during cranking
-    MAX_CRANK_TIME    = 10;  % Abort start if no lightoff after 10s
+    CRANK_RAMP_RATE   = 12;   % PWM %/sec ramp rate during cranking
+    MAX_CRANK_TIME    = 15;  % Abort start if no lightoff after 10s
     STABILIZE_TIME    = 3;   % Seconds to stabilize before declaring idle
 
     % Persistent state
@@ -74,7 +74,7 @@ function [n1_cmd, start_state, starter_torque, fuel_valve] = ...
             % Ramp motor slowly to simulate starter motor
             timer = timer + Ts;
             crank_pwm = crank_pwm + CRANK_RAMP_RATE * Ts;
-            crank_pwm = min(crank_pwm, 30);  % Max starter PWM
+            crank_pwm = min(crank_pwm, 50);  % Max starter PWM
 
             starter_torque = crank_pwm;
             fuel_valve = 0;  % No fuel yet
