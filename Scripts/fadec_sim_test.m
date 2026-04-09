@@ -103,7 +103,12 @@ log.fuel_valve    = zeros(N_steps, 1);
 %  ========================================================================
 pid_integral = 0;
 pid_prev_error = 0;
-
+%% Initialize engine state for first iteration
+egt_val = 350;   % ambient/cold EGT before engine starts
+ps3_val = 14.7;  % atmospheric pressure
+wf_val  = 0;
+fn_val  = 0;
+n1_actual = 0;   % engine is OFF, not spinning
 %% ========================================================================
 %  Main simulation loop
 %  ========================================================================
