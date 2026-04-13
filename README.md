@@ -1,6 +1,6 @@
 # FADEC Project
 
-## Full Authority Digital Engine Control for a Brick-Built CFM LEAP Turbofan
+## Full Authority Digital Engine Control for a LEGO-Built CFM LEAP Turbofan
 
 A hobby-scale implementation of an aircraft engine FADEC (Full Authority Digital Engine Control) system using a LEGO Mindstorms EV3, a brick-built CFM LEAP turbofan engine model, and MATLAB/Simulink.
 
